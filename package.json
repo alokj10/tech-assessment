@@ -6,7 +6,7 @@
   "scripts": {
     "quickstart": "node app",
     "build": "babel src -s -D -d wwwroot --presets es2015,stage-0",
-    "uibuild": "cd client && npm run build",
+    "uibuild": "cd client && npm install && npm run build",
     "wincopy": "xcopy \"client\\build\\\" \"wwwroot\\\" /E",
     "lincopy": "cp -a client/build/. \"wwwroot/\"",
     "start1": "npm run uibuild && npm run wincopy && npm run build && node wwwroot/app.js",

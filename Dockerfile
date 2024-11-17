@@ -32,9 +32,6 @@ RUN npm install
 EXPOSE 5001
 
 # Start the application
-RUN cd client
-RUN npm install
-RUN cd ..
 RUN npm run linuxstart
 # CMD ["npm", "linuxstart"]
 
