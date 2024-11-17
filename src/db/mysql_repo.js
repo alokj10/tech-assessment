@@ -48,6 +48,7 @@ const getData = (query) => {
     //     console.log('error in open connection', err);
     // });
     // connection.connect();
+    console.log('mysqlHost: ', mysqlHost);
 
     var promise = new Promise((resolve, reject) => {
 

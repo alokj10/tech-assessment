@@ -33,6 +33,7 @@ EXPOSE 5001
 
 # Start the application
 # RUN npm run linuxstart
+RUN export MYSQL_HOST=213.210.37.193
 CMD ["npm", "run", "linuxstart"]
 
 # COPY entrypoint.sh /usr/bin/
