@@ -48,8 +48,12 @@ export const VIEW_USERS_QUERY = {
                 data.map((item, index) => {
                     let output = {};
                     output.id = item.id;
-                    output['user_meta'] = JSON.parse(item['user_meta']);
-                    output['org_meta'] = JSON.parse(item['org_meta']);
+                    // output['user_meta'] = JSON.parse(item['user_meta']);
+                    // output['org_meta'] = JSON.parse(item['org_meta']);
+
+                    output['user_meta'] = item['user_meta'];
+                    output['org_meta'] = item['org_meta'];
+
                     outputArray.push(output);
                 })
             }

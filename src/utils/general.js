@@ -101,9 +101,11 @@ export const createPasswordHash = (plainPassword) => {
 export const comparePasswordHash = (plainPassword, passwordHash) => {
     let salt = bcrypt.genSaltSync(10);
     let hash = bcrypt.hashSync(plainPassword, salt);
-    console.log('DBhash', passwordHash);
+    let pHash = bcrypt.hashSync(passwordHash, salt);
+    console.log('DBhash', pHash);
     console.log('userhash', hash);
-    return bcrypt.compareSync(plainPassword, passwordHash);
+    return pHash === hash;
+    // return bcrypt.compareSync(plainPassword, passwordHash);
 }
 
 // module.exports = {

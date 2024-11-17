@@ -40,14 +40,17 @@ passport.use(new LocalStrategy(localOptions, async function(emailId, password, d
 
         if(existingUser) {
             console.log('existingUser', existingUser);
-            let userMeta = JSON.parse(existingUser.user_meta);
+            console.log('user_meta', existingUser.user_meta);
+
+            // let userMeta = JSON.parse(existingUser.user_meta);
                                     let userEntity = {
                                         id: existingUser.id,
                                         emailId: emailId,
-                                        name: userMeta.name ? userMeta.name : emailId,
-                                        role: userMeta.role,
-                                        orgId: userMeta.orgId
+                                        name: existingUser.user_meta.name ? existingUser.user_meta.name : emailId,
+                                        role: existingUser.user_meta.role,
+                                        orgId: existingUser.user_meta.orgId
                                     };
+                                    console.log('userEntity', userEntity);
             done(null, userEntity);
         }
         else {

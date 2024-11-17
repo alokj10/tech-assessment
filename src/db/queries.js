@@ -23,6 +23,8 @@ const queries =  {
                 /*left join ta_mcqresponses r ON JSON_UNQUOTE(JSON_EXTRACT(r.response_meta , '$.invitationId')) = i.id*/
                 /*where r.id in (47, 50)*/
                 where i.isLive=1
+                AND JSON_VALID(r.response_meta)
+                AND JSON_VALID(c.candidate_meta)
                 order by i.time_stamp DESC
         `;
     },
@@ -46,6 +48,8 @@ const queries =  {
             left join ta_mcqresponses r ON r.invitationId = i.id
             where i.isLive=1
             and t.id = ${testId}
+            AND JSON_VALID(c.candidate_meta)
+            AND JSON_VALID(r.response_meta)
             order by i.time_stamp DESC
         `;
     },
@@ -67,6 +71,7 @@ const queries =  {
             join ta_candidates ca ON tr.candidate_id = ca.id 
             join ta_tests t ON tr.test_id = t.id
             where t.id = ${testId}
+            AND JSON_VALID(c.candidate_meta)
             order by tr.created_on DESC
         `;
     },
@@ -78,6 +83,7 @@ const queries =  {
                 join ta_candidates c ON JSON_EXTRACT(i.invitation_meta , '$.candidateId') = c.id 
                 join ta_tests t ON JSON_EXTRACT(i.invitation_meta , '$.testId') = t.id 
                 left join ta_mcqresponses r ON JSON_EXTRACT(r.response_meta , '$.invitationId') = i.id
+                WHERE JSON_VALID(r.response_meta)
             `;
     },
 
@@ -89,7 +95,8 @@ const queries =  {
                 join ta_tests t ON JSON_EXTRACT(i.invitation_meta , '$.testId') = t.id 
                 join ta_users u ON JSON_EXTRACT(i.invitation_meta, '$.createdBy') = u.id 
                 left join ta_mcqresponses r ON JSON_EXTRACT(r.response_meta , '$.invitationId') = i.id
-                WHERE u.id = ${userId} 
+                WHERE u.id = ${userId}
+                AND JSON_VALID(r.response_meta)
             `;
     },
 
@@ -104,6 +111,7 @@ const queries =  {
                 WHERE (JSON_EXTRACT(u.user_meta, '$.orgId') = ${orgId}
                 OR JSON_EXTRACT(u.user_meta, '$.role') = '${admin}')
                 AND i.isLive = 1
+                AND JSON_VALID(r.response_meta)
             `;
     },
 
@@ -126,6 +134,7 @@ const queries =  {
                 join ta_users u ON JSON_EXTRACT(i.invitation_meta, '$.createdBy') = u.id 
                 left join ta_mcqresponses r ON JSON_EXTRACT(r.response_meta , '$.invitationId') = i.id
                 WHERE JSON_EXTRACT(u.user_meta, '$.orgId') = ${orgId}
+                AND JSON_VALID(r.response_meta)
                 order by i.time_stamp DESC
             `;
     },

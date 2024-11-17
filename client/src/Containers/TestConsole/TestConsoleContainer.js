@@ -219,7 +219,7 @@ const mapDispatchToProps = dispatch => ({
 const tabs = [
     {key: 0, content: '<Button variant="container" color="primary">Page {index}</Button>'},
     {key: 1, content: <TestConsoleQuestions /> },
-    {key: 2, content: getButton}
+    // {key: 2, content: getButton}
 ]
 const getButton = (index) => {
     return 'abc'+index;

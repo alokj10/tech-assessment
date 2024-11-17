@@ -1,4 +1,5 @@
-import mysql from 'mysql';
+// import mysql from 'mysql';
+import mysql from 'mysql2';
 
 // const mysql_pool  = mysql.createPool({
 //     connectionLimit: 50,
@@ -27,7 +28,7 @@ import mysql from 'mysql';
 //     database: 'ta_profiledb'
 // });
 var mysqlHost = process.env.MYSQL_HOST || 'localhost';
-var mysqlPort = process.env.MYSQL_PORT || '3306';
+var mysqlPort = process.env.MYSQL_PORT || '13306';
 var mysqlUser = process.env.MYSQL_USER || 'tp_app1';
 var mysqlPass = process.env.MYSQL_PASS || 'tech';
 var mysqlDB   = process.env.MYSQL_DB   || 'ta_profiledb';

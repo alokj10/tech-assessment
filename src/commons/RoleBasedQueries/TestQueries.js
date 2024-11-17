@@ -53,15 +53,17 @@ export const VIEW_TESTS_QUERY = {
             console.log('data count', data.length);
             if(data && data.length > 0) {
                 data.map((item, index) => {
-
+                    // console.log('item', item);
                     let test_meta = item['test_meta'];
-                    test_meta = test_meta.replace(/\n/g, "\\n");
-                    test_meta = test_meta.replace(/\r/g, "\\r");
-                    test_meta = test_meta.replace(/\t/g, "\\t");
+                    // test_meta = test_meta.replace(/\n/g, "\\n");
+                    // test_meta = test_meta.replace(/\r/g, "\\r");
+                    // test_meta = test_meta.replace(/\t/g, "\\t");
                     let output = {};
                     output.id = item.id;
-                    output['test_meta'] = JSON.parse(test_meta);
-                    output['user_meta'] = JSON.parse(item['user_meta']);
+                    // output['test_meta'] = JSON.parse(test_meta);
+                    // output['user_meta'] = JSON.parse(item['user_meta']);
+                    output['test_meta'] = test_meta;
+                    output['user_meta'] = item['user_meta'];
                     outputArray.push(output);
                 })
             }
@@ -100,13 +102,15 @@ export const VIEW_MY_TESTS_QUERY = {
                 data.map((item, index) => {
 
                     let test_meta = item['test_meta'];
-                    test_meta = test_meta.replace(/\n/g, "\\n");
-                    test_meta = test_meta.replace(/\r/g, "\\r");
-                    test_meta = test_meta.replace(/\t/g, "\\t");
+                    // test_meta = test_meta.replace(/\n/g, "\\n");
+                    // test_meta = test_meta.replace(/\r/g, "\\r");
+                    // test_meta = test_meta.replace(/\t/g, "\\t");
                     let output = {};
                     output.id = item.id;
-                    output['test_meta'] = JSON.parse(test_meta);
-                    output['user_meta'] = JSON.parse(item['user_meta']);
+                    // output['test_meta'] = JSON.parse(test_meta);
+                    // output['user_meta'] = JSON.parse(item['user_meta']);
+                    output['test_meta'] = test_meta;
+                    output['user_meta'] = item['user_meta'];
                     outputArray.push(output);
                 })
             }
@@ -178,13 +182,15 @@ export const VIEW_TESTS_AVAILABLE_FOR_ME_QUERY = {
                 data.map((item, index) => {
 
                     let test_meta = item['test_meta'];
-                    test_meta = test_meta.replace(/\n/g, "\\n");
-                    test_meta = test_meta.replace(/\r/g, "\\r");
-                    test_meta = test_meta.replace(/\t/g, "\\t");
+                    // test_meta = test_meta.replace(/\n/g, "\\n");
+                    // test_meta = test_meta.replace(/\r/g, "\\r");
+                    // test_meta = test_meta.replace(/\t/g, "\\t");
                     let output = {};
                     output.id = item.id;
-                    output['test_meta'] = JSON.parse(test_meta);
-                    output['user_meta'] = JSON.parse(item['user_meta']);
+                    // output['test_meta'] = JSON.parse(test_meta);
+                    // output['user_meta'] = JSON.parse(item['user_meta']);
+                    output['test_meta'] = test_meta;
+                    output['user_meta'] = item['user_meta'];
                     outputArray.push(output);
                 })
             }
@@ -253,13 +259,15 @@ export const VIEW_TEST_BY_ID_QUERY = {
                 data.map((item, index) => {
 
                     let test_meta = item['test_meta'];
-                    test_meta = test_meta.replace(/\n/g, "\\n");
-                    test_meta = test_meta.replace(/\r/g, "\\r");
-                    test_meta = test_meta.replace(/\t/g, "\\t");
+                    // test_meta = test_meta.replace(/\n/g, "\\n");
+                    // test_meta = test_meta.replace(/\r/g, "\\r");
+                    // test_meta = test_meta.replace(/\t/g, "\\t");
                     let output = {};
                     output.id = item.id;
-                    output['test_meta'] = JSON.parse(test_meta);
-                    output['user_meta'] = JSON.parse(item['user_meta']);
+                    // output['test_meta'] = JSON.parse(test_meta);
+                    // output['user_meta'] = JSON.parse(item['user_meta']);
+                    output['test_meta'] = test_meta;
+                    output['user_meta'] = item['user_meta'];
                     Object.keys(item).forEach((key) => {
                         if(key !== 'test_meta' && key !== 'user_meta') {
                             output[key] = item[key];
@@ -302,13 +310,15 @@ export const VIEW_TESTS_FOR_GRADE_QUERY = {
                 data.map((item, index) => {
 
                     let test_meta = item['test_meta'];
-                    test_meta = test_meta.replace(/\n/g, "\\n");
-                    test_meta = test_meta.replace(/\r/g, "\\r");
-                    test_meta = test_meta.replace(/\t/g, "\\t");
+                    // test_meta = test_meta.replace(/\n/g, "\\n");
+                    // test_meta = test_meta.replace(/\r/g, "\\r");
+                    // test_meta = test_meta.replace(/\t/g, "\\t");
                     let output = {};
                     output.id = item.id;
-                    output['test_meta'] = JSON.parse(test_meta);
-                    output['user_meta'] = JSON.parse(item['user_meta']);
+                    // output['test_meta'] = JSON.parse(test_meta);
+                    // output['user_meta'] = JSON.parse(item['user_meta']);
+                    output['test_meta'] = test_meta;
+                    output['user_meta'] = item['user_meta'];
                     outputArray.push(output);
                 })
             }
