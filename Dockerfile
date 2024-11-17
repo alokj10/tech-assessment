@@ -32,8 +32,8 @@ RUN npm install
 EXPOSE 5001
 
 # Start the application
-RUN npm run linuxstart
-# CMD ["npm", "linuxstart"]
+# RUN npm run linuxstart
+CMD ["npm", "run", "linuxstart"]
 
 # COPY entrypoint.sh /usr/bin/
 # RUN chmod +x /usr/bin/entrypoint.sh
