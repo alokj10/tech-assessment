@@ -79,6 +79,8 @@ const getData = (query) => {
 }
 
 const executeQuery = (query) => {
+    console.log('mysqlHost: ', mysqlHost);
+
     var promise = new Promise((resolve, reject) => {
 
         console.log('execute query: ', query);
