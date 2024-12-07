@@ -85,14 +85,6 @@ class EmailHelper {
             html = html.replace('$$test_duration$$', emailInfo.testDuration);
             html = html.replace('$$faq_link$$', emailInfo.faqLink);
         }
-        if(emailInfo.notificationType === 'rma') {
-            if(emailInfo.rmaRequest.customerDetails) {
-                html = html.replace('$$customer_name$$', emailInfo.rmaRequest.customerDetails.customerName);
-                html = html.replace('$$telephone$$', emailInfo.rmaRequest.customerDetails.telephone);
-                html = html.replace('$$contact_person$$', emailInfo.rmaRequest.customerDetails.contactPerson);
-                html = html.replace('$$rma_link$$', emailInfo.rmaLink);
-            }
-        }
         if(emailInfo.notificationType === 'verify_user_email') {
             html = html.replace('$$user_name$$', emailInfo.user_name);
             html = html.replace('$$verification_link$$', emailInfo.verification_link);

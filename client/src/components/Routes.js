@@ -24,10 +24,6 @@ import InviteContainer from '../Containers/InviteConsole/InviteContainer';
 import SimulatorConsoleContainer from '../Containers/Simulator/SimulatorConsoleContainer';
 import SimulatorShell from '../Containers/Simulator/SimulatorShell';
 
-import AddRmaRequest from '../HiTech/AddRmaRequestContainer';
-import RmaRequestList from '../HiTech/RmaRequestListContainer';
-import ViewRmaRequest from '../HiTech/ViewRmaRequest';
-
 import PrivateRoute from '../components/lib/PrivateRoute';
 import CandidateConsoleContainer from '../Containers/CandidateConsole/CandidateConsoleContainer';
 import SimulatorRoute from './lib/SimulatorRoute';
@@ -86,12 +82,6 @@ const Routes = (props) => {
             <PrivateRoute path="/grades" component={GradeContainer} />
             <PrivateRoute path="/myTests" component={TestsTakenContainer} />
             <PrivateRoute path="/myProfile" component={OpProfileContainer} />
-
-
-            {/* Routes for HiTech*/}
-            <Route path="/rmaRequests" component={RmaRequestList} />
-            <Route path="/createRma" component={AddRmaRequest} />
-            <Route path="/viewRma" component={ViewRmaRequest} />
 
         </div>
     );

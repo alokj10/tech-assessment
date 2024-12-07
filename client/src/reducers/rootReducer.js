@@ -14,7 +14,6 @@ import candidateConsoleReducer from './candidateConsoleReducer';
 import gradeReducer from './gradeReducer';
 import registeredTestReducer from './registeredTestReducer';
 
-import rmaReducer from '../HiTech/rmaReducer';
 
 const appReducer = combineReducers({
     categoryReducer,
@@ -30,8 +29,7 @@ const appReducer = combineReducers({
     dashboardReducer,
     candidateConsoleReducer,
     gradeReducer,
-    registeredTestReducer,
-    rmaReducer
+    registeredTestReducer
 });
 
 const rootReducer = (state, action) => {

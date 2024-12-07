@@ -26,9 +26,6 @@ const MenuItems = [
     { routeName: 'grades', routeCaption: 'Grades', icon: LocalLibrary, app: 'TeachAssesment' },
     { routeName: 'orgs', routeCaption: 'Organizations', icon: BusinessCenter, app: 'TeachAssesment' },
     { routeName: 'users', routeCaption: 'Users', icon: PermIdentity, app: 'TeachAssesment' },
-
-    /* HiTech Routes */
-    // { routeName: 'rmaRequests', routeCaption: 'RMA', icon: Book, app: 'Hitech' },
 ];
 
 const getIcon = (menuItem) => {

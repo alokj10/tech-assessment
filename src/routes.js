@@ -4,8 +4,6 @@ import { McqController, CategoryController, SkillController,
         UserController, GradeController } from './Controllers/admin';
 import { TestInviteController, TestRegistrationController } from './Controllers/candidate';
 
-import { RmaRequestController } from './Controllers/hitech';
-
 import { generateToken, sendToken } from './utils/token.utils';
 import passport from 'passport';
 import auth from './utils/auth';
@@ -59,11 +57,6 @@ api.get('/admin/getAllOrgs', auth, OrgController.GetAll);
 api.post('/admin/org', auth, OrgController.Add);
 api.put('/admin/org', auth, OrgController.Update);
 api.delete('/admin/org', auth, OrgController.Delete);
-
-/* hitech endpoints */
-api.get('/hitech/rmaRequests', RmaRequestController.GetAll);
-api.post('/hitech/rmaRequest', RmaRequestController.Add);
-api.get('/hitech/deleteRmaRequest', RmaRequestController.Delete);
 
 /* Admin Test endpoints */
 api.get('/admin/getAllTests', auth, AdminTestController.GetAll);
